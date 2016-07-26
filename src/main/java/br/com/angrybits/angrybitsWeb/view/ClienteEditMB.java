@@ -4,10 +4,12 @@ import javax.inject.Inject;
 
 import br.com.angrybits.angrybitsCore.business.ClienteBC;
 import br.com.angrybits.angrybitsCore.entity.Cliente;
+import br.gov.frameworkdemoiselle.annotation.PreviousView;
 import br.gov.frameworkdemoiselle.stereotype.ViewController;
 import br.gov.frameworkdemoiselle.template.AbstractEditPageBean;
 
 @ViewController
+@PreviousView("/bookmark_list.xhtml")
 public class ClienteEditMB  extends AbstractEditPageBean<Cliente, Long>{
 	
 	/**
@@ -26,7 +28,7 @@ public class ClienteEditMB  extends AbstractEditPageBean<Cliente, Long>{
 	@Override
 	public String insert() {
 		this.clienteBC.insert(getBean());
-		return null;
+		return getPreviousView();
 	}
 
 	@Override
