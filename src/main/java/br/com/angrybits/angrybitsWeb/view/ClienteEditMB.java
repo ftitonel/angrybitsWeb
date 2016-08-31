@@ -26,6 +26,8 @@ public class ClienteEditMB  extends AbstractEditPageBean<Cliente, Long>{
 	@Override
 	public String insert() {
 		this.clienteBC.insert(getBean());
+		Cliente cliente1 = new Cliente("felipe.titonel@gmail.com", "(85)999383404", "PF", null, null);
+		this.clienteBC.insert(cliente1);
 		return null;
 	}
 

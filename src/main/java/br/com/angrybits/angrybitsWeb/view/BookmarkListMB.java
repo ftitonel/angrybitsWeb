@@ -5,13 +5,13 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import br.com.angrybits.angrybitsCore.business.BookmarkBC;
+import br.com.angrybits.angrybitsCore.entity.Bookmark;
 import br.gov.frameworkdemoiselle.annotation.NextView;
 import br.gov.frameworkdemoiselle.annotation.PreviousView;
 import br.gov.frameworkdemoiselle.stereotype.ViewController;
 import br.gov.frameworkdemoiselle.template.AbstractListPageBean;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
-import br.com.angrybits.angrybitsCore.entity.Bookmark;
-import br.com.angrybits.angrybitsWeb.business.BookmarkBC;
 
 @ViewController
 @NextView("/bookmark_edit.xhtml")
