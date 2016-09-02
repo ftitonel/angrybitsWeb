@@ -4,13 +4,13 @@
 		<h:form prependId="false">
 			<p:toolbar>
 				<p:toolbarGroup align="left">
-					<p:commandButton value="#{messages['button.save']}:INSERIR" action="#{ClienteEditMB.insert}" rendered="true" ajax="false" />
-					<p:commandButton value="#{messages['button.save']}:ATUALIZAR" action="#{ClienteEditMB.update}" rendered="true" ajax="false" />
+					<p:commandButton value="#{messages['button.save']}:INSERIR" action="#{clienteEditMB.insert}" rendered="true" ajax="false" />
+					<p:commandButton value="#{messages['button.save']}:ATUALIZAR" action="#{clienteEditMB.update}" rendered="true" ajax="false" />
 					<p:commandButton value="#{messages['button.delete']}" rendered="true" onclick="PF('confirmation').show()" type="button"
 						immediate="true" ajax="false" />
 					<p:confirmDialog message="#{messages['label.confirm.delete']}" header="#{messages['label.dialog.delete']}" showEffect="bounce"
 						hideEffect="explode" severity="alert" widgetVar="confirmation">
-						<p:commandButton value="#{messages['button.dialog.yes']}" action="#{ClienteEditMB.delete}" immediate="true" ajax="false" />
+						<p:commandButton value="#{messages['button.dialog.yes']}" action="#{clienteEditMB.delete}" immediate="true" ajax="false" />
 						<p:commandButton value="#{messages['button.dialog.no']}" onclick="PF('confirmation').hide();" type="button" />
 					</p:confirmDialog>
 				</p:toolbarGroup>
@@ -18,19 +18,23 @@
 
 			<br />
 
-			<p:fieldset legend="#{messages['bookmark.label']}" toggleable="true" toggleSpeed="500">
+			<p:fieldset legend="Clientes" toggleable="true" toggleSpeed="500">
 				<h:panelGrid id="fields" columns="3">
-					<h:outputLabel value="#{messages['bookmark.label.id']}: " for="id" styleClass="text-input" />
-					<h:outputText id="id" value="#{ClienteEditMB.bean.id}" />
+					<h:outputLabel value="Id: " for="id" styleClass="text-input" />
+					<h:outputText id="id" value="#{clienteEditMB.bean.id}" />
 					<p:message for="id" />
 
-					<h:outputLabel value="#{messages['bookmark.label.description']}: " for="description" styleClass="text-input" />
-					<h:inputText id="description" value="#{ClienteEditMB.bean.description}" title="#{messages['bookmark.alt.description']}" />
-					<p:message for="description" />
+					<h:outputLabel value="Emails: " for="email" styleClass="text-input" />
+					<h:inputText id="email" value="#{clienteEditMB.bean.usuario_email}" title="Email" />
+					<p:message for="email" />
 
-					<h:outputLabel value="#{messages['bookmark.label.link']}: " for="link" styleClass="text-input" />
-					<h:inputText id="link" value="#{ClienteEditMB.bean.link}" title="#{messages['bookmark.alt.link']}" />
-					<p:message for="link" />
+					<h:outputLabel value="Celular: " for="celular" styleClass="text-input" />
+					<h:inputText id="celular" value="#{clienteEditMB.bean.usuario_celular}" title="Celular" />
+					<p:message for="celular" />
+					
+					<h:outputLabel value="Tipo: " for="tipo" styleClass="text-input" />
+					<h:inputText id="tipo" value="#{clienteEditMB.bean.tipo_usuario}" title="Tipo (PJ ou PF)" />
+					<p:message for="tipo" />
 				</h:panelGrid>
 			</p:fieldset>
 		</h:form>
