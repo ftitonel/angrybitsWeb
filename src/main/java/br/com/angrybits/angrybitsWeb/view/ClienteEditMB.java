@@ -4,26 +4,17 @@ import javax.inject.Inject;
 
 import br.com.angrybits.angrybitsCore.business.ClienteBC;
 import br.com.angrybits.angrybitsCore.entity.Cliente;
-<<<<<<< HEAD
 import br.gov.frameworkdemoiselle.stereotype.Controller;
-=======
 import br.gov.frameworkdemoiselle.annotation.PreviousView;
->>>>>>> refs/remotes/origin/master
 import br.gov.frameworkdemoiselle.stereotype.ViewController;
 import br.gov.frameworkdemoiselle.template.AbstractEditPageBean;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
 
 @ViewController
-<<<<<<< HEAD
 @Controller
-=======
 @PreviousView("/bookmark_list.xhtml")
->>>>>>> refs/remotes/origin/master
 public class ClienteEditMB  extends AbstractEditPageBean<Cliente, Long>{
-	
-	/**
-	 * 
-	 */
+		
 	private static final long serialVersionUID = 1L;
 	@Inject
 	private ClienteBC clienteBC;
