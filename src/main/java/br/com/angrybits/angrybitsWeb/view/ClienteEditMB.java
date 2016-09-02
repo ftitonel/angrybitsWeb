@@ -4,10 +4,13 @@ import javax.inject.Inject;
 
 import br.com.angrybits.angrybitsCore.business.ClienteBC;
 import br.com.angrybits.angrybitsCore.entity.Cliente;
+import br.gov.frameworkdemoiselle.stereotype.Controller;
 import br.gov.frameworkdemoiselle.stereotype.ViewController;
 import br.gov.frameworkdemoiselle.template.AbstractEditPageBean;
+import br.gov.frameworkdemoiselle.transaction.Transactional;
 
 @ViewController
+@Controller
 public class ClienteEditMB  extends AbstractEditPageBean<Cliente, Long>{
 	
 	/**
@@ -18,28 +21,29 @@ public class ClienteEditMB  extends AbstractEditPageBean<Cliente, Long>{
 	private ClienteBC clienteBC;
 
 	@Override
+	@Transactional
 	public String delete() {
 		this.clienteBC.delete(getId());
 		return null;
 	}
 
 	@Override
+	@Transactional
 	public String insert() {
 		this.clienteBC.insert(getBean());
-		Cliente cliente1 = new Cliente("felipe.titonel@gmail.com", "(85)999383404", "PF", null, null);
-		this.clienteBC.insert(cliente1);
 		return null;
 	}
 
 	@Override
+	@Transactional
 	public String update() {
 		this.clienteBC.update(getBean());
 		return null;
 	}
 
 	@Override
-	protected Cliente handleLoad(Long arg0) {
-		return null;
+	protected Cliente handleLoad(Long id) {
+		return this.clienteBC.load(id);
 	}
 
 }

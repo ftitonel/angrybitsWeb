@@ -5,10 +5,11 @@ import javax.inject.Inject;
 import br.com.angrybits.angrybitsCore.business.BookmarkBC;
 import br.com.angrybits.angrybitsCore.entity.Bookmark;
 import br.gov.frameworkdemoiselle.annotation.PreviousView;
+import br.gov.frameworkdemoiselle.stereotype.Controller;
 import br.gov.frameworkdemoiselle.stereotype.ViewController;
 import br.gov.frameworkdemoiselle.template.AbstractEditPageBean;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
-
+@Controller
 @ViewController
 @PreviousView("/bookmark_list.xhtml")
 public class BookmarkEditMB extends AbstractEditPageBean<Bookmark, Long> {

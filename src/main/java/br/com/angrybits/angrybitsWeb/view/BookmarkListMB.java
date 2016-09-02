@@ -9,10 +9,11 @@ import br.com.angrybits.angrybitsCore.business.BookmarkBC;
 import br.com.angrybits.angrybitsCore.entity.Bookmark;
 import br.gov.frameworkdemoiselle.annotation.NextView;
 import br.gov.frameworkdemoiselle.annotation.PreviousView;
+import br.gov.frameworkdemoiselle.stereotype.Controller;
 import br.gov.frameworkdemoiselle.stereotype.ViewController;
 import br.gov.frameworkdemoiselle.template.AbstractListPageBean;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
-
+@Controller
 @ViewController
 @NextView("/bookmark_edit.xhtml")
 @PreviousView("/bookmark_list.xhtml")
