@@ -20,8 +20,9 @@ public class ClienteEditMB  extends AbstractEditPageBean<Cliente, Long>{
 	@Inject
 	private ClienteBC clienteBC;
 
+	
 	@Override
-	@Transactional
+	@Transactional	
 	public String delete() {
 		this.clienteBC.delete(getId());
 		return null;
