@@ -2,10 +2,11 @@
 	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" template="/template/template.xhtml">
 	<ui:define name="body">
 		<h:form prependId="false">
+		<p:outputLabel>V1</p:outputLabel>
 			<p:toolbar>
 				<p:toolbarGroup align="left">
 					<p:commandButton value="#{messages['button.save']}:INSERIR" action="#{clienteEditMB.insert}" rendered="#{!clienteEditMB.updateMode}" ajax="false" />
-					<p:commandButton value="#{messages['button.save']}:ATUALIZAR" action="#{clienteEditMB.update}" rendered="true" ajax="false" />
+					<p:commandButton value="#{messages['button.save']}:ATUALIZAR" action="#{clienteEditMB.update}" rendered="#{clienteEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.delete']}" rendered="true" onclick="PF('confirmation').show()" type="button"
 						immediate="true" ajax="false" />
 					<p:confirmDialog message="#{messages['label.confirm.delete']}" header="#{messages['label.dialog.delete']}" showEffect="bounce"

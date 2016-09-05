@@ -8,6 +8,7 @@
 <h:head></h:head> 
 <h:body> 
 <h:form>
+<p:outputLabel>V1</p:outputLabel>
 <p:panelGrid columns="2">
 <p:outputLabel for="email" value="EMAIL:"/>
 <p:inputText id="email" value="#{clienteEditMB.bean.usuario_email}"/>
@@ -16,7 +17,8 @@
 <p:outputLabel for="tipo" value="TIPO:"/>
 <p:inputText id="tipo"  value="#{clienteEditMB.bean.tipo_usuario}"/>
 </p:panelGrid>
-<p:commandButton value="Salvar" id="btnIncluir" action="#{clienteEditMB.insert()}" ajax="false"/>
+<p:commandButton value="Salvar" id="btnIncluir" action="#{clienteEditMB.insert}" ajax="false" rendered="#{!clienteEditMB.updateMode}"/>
+<p:commandButton value="Atualizar" id="btnAtualizar" action="#{clienteEditMB.update}" ajax="false" rendered="#{clienteEditMB.updateMode}"/>
 </h:form>
 </h:body> 
 </html>
