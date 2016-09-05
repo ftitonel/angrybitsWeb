@@ -4,7 +4,7 @@
 		<h:form prependId="false">
 			<p:toolbar>
 				<p:toolbarGroup align="left">
-					<p:commandButton value="#{messages['button.save']}:INSERIR" action="#{clienteEditMB.insert}" rendered="true" ajax="false" />
+					<p:commandButton value="#{messages['button.save']}:INSERIR" action="#{clienteEditMB.insert}" rendered="#{!clienteEditMB.updateMode}" ajax="false" />
 					<p:commandButton value="#{messages['button.save']}:ATUALIZAR" action="#{clienteEditMB.update}" rendered="true" ajax="false" />
 					<p:commandButton value="#{messages['button.delete']}" rendered="true" onclick="PF('confirmation').show()" type="button"
 						immediate="true" ajax="false" />
@@ -19,7 +19,7 @@
 			<br />
 
 			<p:fieldset legend="Clientes" toggleable="true" toggleSpeed="500">
-				<h:panelGrid id="fields" columns="3">
+				<h:panelGrid id="fields" columns="3" cellpadding="5" cellspacing="5">
 					<h:outputLabel value="Id: " for="id" styleClass="text-input" />
 					<h:outputText id="id" value="#{clienteEditMB.bean.id}" />
 					<p:message for="id" />
