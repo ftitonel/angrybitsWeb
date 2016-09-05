@@ -2,13 +2,14 @@ package br.com.angrybits.angrybitsWeb.view;
 
 import javax.inject.Inject;
 
+import br.com.angrybits.angrybitsCore.business.BookmarkBC;
+import br.com.angrybits.angrybitsCore.entity.Bookmark;
 import br.gov.frameworkdemoiselle.annotation.PreviousView;
+import br.gov.frameworkdemoiselle.stereotype.Controller;
 import br.gov.frameworkdemoiselle.stereotype.ViewController;
 import br.gov.frameworkdemoiselle.template.AbstractEditPageBean;
 import br.gov.frameworkdemoiselle.transaction.Transactional;
-import br.com.angrybits.angrybitsCore.entity.Bookmark;
-import br.com.angrybits.angrybitsWeb.business.BookmarkBC;
-
+@Controller
 @ViewController
 @PreviousView("/bookmark_list.xhtml")
 public class BookmarkEditMB extends AbstractEditPageBean<Bookmark, Long> {
