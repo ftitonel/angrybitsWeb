@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -20,30 +21,50 @@
 	</parent>
 
 	<dependencies>
-	<dependency>
-	<groupId>br.com.angrybits</groupId>
-	<artifactId>angrybitsCore</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>br.gov.frameworkdemoiselle</groupId> -->
-<!-- 			<artifactId>demoiselle-jpa</artifactId> -->
-<!-- 			<scope>compile</scope> -->
-<!-- 		</dependency> -->
-		<!-- If you are using a JTA transaction then use this extension -->
-		<!--
 		<dependency>
-		    <groupId>br.gov.frameworkdemoiselle</groupId>
-		    <artifactId>demoiselle-jta</artifactId>
-		    <scope>compile</scope>
+			<groupId>br.com.angrybits</groupId>
+			<artifactId>angrybitsCore</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		-->
+		<!-- <dependency> -->
+		<!-- <groupId>br.gov.frameworkdemoiselle</groupId> -->
+		<!-- <artifactId>demoiselle-jpa</artifactId> -->
+		<!-- <scope>compile</scope> -->
+		<!-- </dependency> -->
+		<!-- If you are using a JTA transaction then use this extension -->
+		<!-- <dependency> <groupId>br.gov.frameworkdemoiselle</groupId> <artifactId>demoiselle-jta</artifactId> 
+			<scope>compile</scope> </dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>6.0</version>
-			<scope>compile</scope>
+			<version>6.2</version>
 		</dependency>
+
+		<!-- Dependencias para expotação -->
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.lowagie/itext -->
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+
 
 		<dependency>
 			<groupId>br.gov.frameworkdemoiselle.component</groupId>

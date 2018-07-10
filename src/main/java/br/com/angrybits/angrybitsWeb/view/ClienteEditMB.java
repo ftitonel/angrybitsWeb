@@ -2,8 +2,8 @@ package br.com.angrybits.angrybitsWeb.view;
 
 import javax.inject.Inject;
 
-import br.com.angrybits.angrybitsCore.business.ClienteBC;
-import br.com.angrybits.angrybitsCore.entity.Cliente;
+import br.com.angrybits.angrybitsCore.business.UsuarioBC;
+import br.com.angrybits.angrybitsCore.entity.Usuario;
 import br.gov.frameworkdemoiselle.annotation.PreviousView;
 import br.gov.frameworkdemoiselle.stereotype.Controller;
 import br.gov.frameworkdemoiselle.stereotype.ViewController;
@@ -13,11 +13,11 @@ import br.gov.frameworkdemoiselle.transaction.Transactional;
 @ViewController
 @Controller
 @PreviousView("/cadastrar_cliente.xhtml")
-public class ClienteEditMB  extends AbstractEditPageBean<Cliente, Long>{
+public class ClienteEditMB  extends AbstractEditPageBean<Usuario, Long>{
 		
 	private static final long serialVersionUID = 1L;
 	@Inject
-	private ClienteBC clienteBC;
+	private UsuarioBC clienteBC;
 
 	
 	@Override
@@ -42,7 +42,7 @@ public class ClienteEditMB  extends AbstractEditPageBean<Cliente, Long>{
 	}
 
 	@Override
-	protected Cliente handleLoad(Long id) {
+	protected Usuario handleLoad(Long id) {
 		return this.clienteBC.load(id);
 	}
 

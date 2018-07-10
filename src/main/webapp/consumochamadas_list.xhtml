@@ -1,0 +1,109 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml">
+	<ui:define name="body">
+		<h:form prependId="false">
+			<p:dataTable id="tbl" var="consumo" value="#{consumoChamadasListMB.resultList}"
+				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+				paginator="true" rows="50" style="margin-bottom:20px"
+				tableStyle="table-layout: auto; white-space: nowrap; font-size: smaller">
+
+				<f:facet name="{Exporters}">
+					<h:commandLink>
+						<img src="images/excel.png" border="0" width="24"/>
+						<p:dataExporter type="xls" target="tbl" fileName="consumo" />
+					</h:commandLink>
+
+					<h:commandLink>
+						<img src="images/pdf.png" border="0" width="24" />
+						<p:dataExporter type="pdf" target="tbl" fileName="consumo" />
+					</h:commandLink>
+
+					<h:commandLink>
+						<img src="images/csv.png" border="0" width="24" />
+						<p:dataExporter type="csv" target="tbl" fileName="consumo" />
+					</h:commandLink>
+
+					<h:commandLink>
+						<img src="images/xml.png" border="0" width="24" />
+						<p:dataExporter type="xml" target="tbl" fileName="consumo" />
+					</h:commandLink>
+				</f:facet>
+
+				<p:column width="auto">
+					<f:facet name="header">
+						<h:outputText value="Id" />
+					</f:facet>
+					<h:outputText value="#{consumo.id}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Origem" />
+					</f:facet>
+					<h:outputText value="#{consumo.numero_origem}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Destino" />
+					</f:facet>
+					<h:outputText value="#{consumo.numero_destino}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Início" />
+					</f:facet>
+					<h:outputText value="#{consumo.dt_inicio}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Fim" />
+					</f:facet>
+					<h:outputText value="#{consumo.dt_fim}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Duração" />
+					</f:facet>
+					<h:outputText value="#{consumo.duracao}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Operadora" />
+					</f:facet>
+					<h:outputText value="#{consumo.label}" />
+				</p:column>
+			</p:dataTable>
+
+			<h3>EXPORTAR DADOS DA PÁGINA</h3>
+			<h:commandLink>
+				<img src="images/excel.png" border="0" />
+				<p:dataExporter type="xls" target="tbl" fileName="consumo"
+					pageOnly="true" />
+			</h:commandLink>
+
+			<h:commandLink>
+			<img src="images/pdf.png" border="0" />				
+				<p:dataExporter type="pdf" target="tbl" fileName="consumo"
+					pageOnly="true" />
+			</h:commandLink>
+
+			<h:commandLink>
+			<img src="images/csv.png" border="0" />
+				<p:dataExporter type="csv" target="tbl" fileName="consumo"
+					pageOnly="true" />
+			</h:commandLink>
+
+			<h:commandLink>
+			<img src="images/xml.png" border="0" />
+				<p:dataExporter type="xml" target="tbl" fileName="consumo"
+					pageOnly="true" />
+			</h:commandLink>
+		</h:form>
+	</ui:define>
+</ui:composition>

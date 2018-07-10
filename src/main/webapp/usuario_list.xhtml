@@ -1,0 +1,92 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml">
+	<ui:define name="body">
+		<h:form prependId="false">
+			<p:dataTable id="tbl" var="usuario" value="#{usuarioListMB.resultList}"
+				paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+				paginator="true" rows="50" style="margin-bottom:20px"
+				tableStyle="table-layout: auto; white-space: nowrap; font-size: smaller">
+
+				<f:facet name="{Exporters}">
+					<h:commandLink>
+						<img src="images/excel.png" border="0" width="24"/>
+						<p:dataExporter type="xls" target="tbl" fileName="usuario" />
+					</h:commandLink>
+
+					<h:commandLink>
+						<img src="images/pdf.png" border="0" width="24" />
+						<p:dataExporter type="pdf" target="tbl" fileName="usuario" />
+					</h:commandLink>
+
+					<h:commandLink>
+						<img src="images/csv.png" border="0" width="24" />
+						<p:dataExporter type="csv" target="tbl" fileName="usuario" />
+					</h:commandLink>
+
+					<h:commandLink>
+						<img src="images/xml.png" border="0" width="24" />
+						<p:dataExporter type="xml" target="tbl" fileName="usuario" />
+					</h:commandLink>
+				</f:facet>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Id" />
+					</f:facet>
+					<h:outputText value="#{usuario.id}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Email" />
+					</f:facet>
+					<h:outputText value="#{usuario.usuario_email}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Celular" />
+					</f:facet>
+					<h:outputText value="#{usuario.usuario_celular}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Tipo" />
+					</f:facet>
+					<h:outputText value="#{usuario.tipo_usuario}" />
+				</p:column>
+				
+			</p:dataTable>
+
+			<h3>EXPORTAR DADOS DA PÁGINA</h3>
+			<h:commandLink>
+				<img src="images/excel.png" border="0" />
+				<p:dataExporter type="xls" target="tbl" fileName="usuario"
+					pageOnly="true" />
+			</h:commandLink>
+
+			<h:commandLink>
+			<img src="images/pdf.png" border="0" />				
+				<p:dataExporter type="pdf" target="tbl" fileName="usuario"
+					pageOnly="true" />
+			</h:commandLink>
+
+			<h:commandLink>
+			<img src="images/csv.png" border="0" />
+				<p:dataExporter type="csv" target="tbl" fileName="usuario"
+					pageOnly="true" />
+			</h:commandLink>
+
+			<h:commandLink>
+			<img src="images/xml.png" border="0" />
+				<p:dataExporter type="xml" target="tbl" fileName="usuario"
+					pageOnly="true" />
+			</h:commandLink>
+		</h:form>
+	</ui:define>
+</ui:composition>

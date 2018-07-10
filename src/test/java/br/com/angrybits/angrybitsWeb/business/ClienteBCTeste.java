@@ -11,16 +11,16 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import br.com.angrybits.angrybitsCore.business.ClienteBC;
+import br.com.angrybits.angrybitsCore.business.UsuarioBC;
 import br.com.angrybits.angrybitsCore.entity.Bookmark;
-import br.com.angrybits.angrybitsCore.entity.Cliente;
+import br.com.angrybits.angrybitsCore.entity.Usuario;
 import br.gov.frameworkdemoiselle.junit.DemoiselleRunner;
 
 @RunWith(DemoiselleRunner.class)
 public class ClienteBCTeste {
 
 	@Inject
-	private ClienteBC clienteBC;
+	private UsuarioBC clienteBC;
 	
 	@Inject
 	private BookmarkBC bookmarkBC;
@@ -42,9 +42,9 @@ public class ClienteBCTeste {
 	
 	@Test
 	public void testInsert() {
-		Cliente cliente1 = new Cliente("felipe.titonel@gmail.com", "(85)999383404", "PF", null, null);
+		Usuario cliente1 = new Usuario("felipe.titonel@gmail.com", "(85)999383404", "PF", null, null);
 		clienteBC.insert(cliente1);
-		List<Cliente> listaBookmarks = clienteBC.findAll();
+		List<Usuario> listaBookmarks = clienteBC.findAll();
 		assertNotNull(listaBookmarks);
 		assertEquals(1, listaBookmarks.size());
 	}
